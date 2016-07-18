@@ -6,7 +6,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
-    "test": "node_modules/.bin/eslint --ext .js,.jsx . && node_modules/mocha/bin/mocha --compilers js:babel-core/register test",
+    "test": "node_modules/.bin/eslint --ext .js,.jsx . && jest -c .jestconfig.json",
     "build-mac": "electron-packager . Classroom --icon=app/resources/icon.icns --platform=darwin --arch=x64 --out=dist --overwrite"
   },
   "repository": {
@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/education/classroom-desktop#readme",
   "devDependencies": {
+    "babel-jest": "^13.2.2",
+    "babel-polyfill": "^6.9.1",
     "electron-packager": "^7.0.4",
     "electron-prebuilt": "^1.2.0",
     "eslint": "^2.13.0",
@@ -40,6 +42,7 @@
     "chai": "^3.5.0",
     "deep-freeze": "0.0.1",
     "electron-is-dev": "^0.1.1",
+    "jest-cli": "^13.2.3",
     "mocha": "^2.5.3",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
